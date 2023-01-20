@@ -1,3 +1,26 @@
-# Practicing With Vue
+# practicing-with-vue
 
-## Repo made to start practicing with Vue.js to see if worthwhile to make chromatic togue with Vue
+Doing the MDN vue tutorial
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
