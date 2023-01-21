@@ -6,7 +6,7 @@
       id="new-todo-input"
       name="new-todo"
       autocomplete="off" 
-      v-model="label" />
+      v-model.trim.lazy="label" />
     <button type="submit">Add</button>
   </form>
 </template>
