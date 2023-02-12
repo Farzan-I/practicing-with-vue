@@ -1,14 +1,26 @@
 <template>
-
-  <div class="custom-checkbox">
-    <input type="checkbox" :id="id" :checked="isDone" class="checkbox" @change="$emit('checkbox-changed')"/>
-    <label :for="id" class="checkbox-label">{{label}}</label>
+  <div class="stack-small">
+    <div class="custom-checkbox">
+      <input 
+      type="checkbox" 
+      class="checkbox"
+      :id="id" 
+      :checked="isDone" 
+      @change="$emit('checkbox-changed')"/>
+      <label :for="id" class="checkbox-label">{{label}}</label>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn" @click="toggleToItemEditForm">
+        Edit <span class="visually-hidden">{{ label }}</span>
+      </button>
+      <button type="button" class="btn btn___danger" @click="delteToDo">
+        Delete <span class="visually-hidden">{{ label }}</span>
+      </button>
+    </div>
   </div>
-
 </template>
 
 <script>
-
   export default {
     props: {
       label: { required: true, type: String },
@@ -18,8 +30,17 @@
     data() {
       return {
         isDone: this.done,
+        isEditing: false
       };
     },
+    methods: {
+      deleteToDo() {
+        this.$emit('item-delted');
+      },
+      toggleToItemEditForm() {
+        this.isEditing = true;
+      }
+    }
   };
 </script>
 
@@ -108,7 +129,6 @@
     border-width: 4px;
     outline: 3px dashed #228bec;
   }
-
   .custom-checkbox > label::after {
     box-sizing: content-box;
     content: "";
@@ -134,5 +154,4 @@
       line-height: 1.31579;
     }
   }
-
 </style>
