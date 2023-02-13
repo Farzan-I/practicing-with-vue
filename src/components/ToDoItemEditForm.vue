@@ -4,9 +4,10 @@
       <label class="edit-label">Edit Name for &quot;{{ label }}&quot;</label>
       <input 
         :id="id"
+        ref="labelInput"
         type="text"
         autocomplete="off"
-        v.model.lazy.trim="newLabel" />
+        v-model.lazy.trim="newLabel" />
     </div>
     <div class="btn-group">
       <button type="button" class="btn" @click="onCancel">
@@ -28,10 +29,10 @@
         type: String,
         required: true,
       },
-    },
-    id: {
-      type: String,
-      required: true,
+      id: {
+        type: String,
+        required: true,
+      },
     },
     data() {
       return {
