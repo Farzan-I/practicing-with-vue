@@ -1,4 +1,7 @@
-# practicing-with-vue
+# Practicing with Vue
+
+## Demo
+### Home page
 
 Doing the MDN vue tutorial
 
